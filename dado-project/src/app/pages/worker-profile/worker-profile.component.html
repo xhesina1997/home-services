@@ -1,0 +1,255 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="column" fxLayoutAlign="start center" style="width: 50vw; height: auto;  background: rgba(255, 255, 255, 0.79); border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+    <div fxLayout="row" fxLayoutAlign="center center"
+         style="height: 25px; width: 100%; font-family: Raleway-Thin; font-size: 25px; margin-top: 35px;letter-spacing: 1px">
+      <div *ngIf="workerProfile==false"> Krijoni profilin tuaj!</div>
+      <div *ngIf="workerProfile==true" fxLayout="row" fxLayoutAlign="center center" style="width: 100%">
+        <div fxFlex="55" fxLayoutAlign="end center" style="padding-right: 15px;"> Profili</div>
+        <div fxFlex="45" class="example-button-container" fxLayoutAlign="end center">
+          <button *ngIf="editMode==false" mat-fab color="warn" style="margin-right: 20px; border-radius: 33px;
+          box-shadow:  6px 6px 16px #bfbfbf,
+             -6px -6px 16px #ffffff;" (click)="editProfile(workerProfileData)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button *ngIf="editMode==true" mat-fab color="warn" style="margin-right: 20px; border-radius: 33px;
+          box-shadow:  6px 6px 16px #bfbfbf,
+             -6px -6px 16px #ffffff;" (click)="cancelEdit()">
+            <mat-icon>clear</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="workerProfile==true && editMode==false" fxLayout="row" fxLayoutAlign="center center"
+         style="width: 100%; margin-top: 5px;">
+      <span style="color: green;" *ngIf="workerProfileData[0]?.visible == true">Profil aktiv</span>
+      <span style="color: red;" *ngIf="workerProfileData[0]?.visible == false">Profil jo aktiv</span>
+    </div>
+    <form *ngIf="workerProfile == false" [formGroup]="createProfileForm"
+          (ngSubmit)="createProfile(createProfileForm.value)"
+          style="width: 100%">
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Emer</mat-label>
+            <input matInput placeholder="Emer" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Mbiemer</mat-label>
+            <input matInput placeholder="Mbiemer" formControlName="surname">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Numer telefoni</mat-label>
+            <input matInput placeholder="Numer telefoni" formControlName="phoneNumber">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Qyteti</mat-label>
+            <input matInput placeholder="Qyteti" formControlName="city">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center start" style="padding-left: 75px">
+          <div style="padding-bottom: 5px">Kategorite e punes:</div>
+          <mat-checkbox formControlName="childCare">Kujdestare femijesh</mat-checkbox>
+          <mat-checkbox formControlName="seniorCare">Kujdestare te moshuarish</mat-checkbox>
+          <mat-checkbox formControlName="petCare">kujdestare kafshesh</mat-checkbox>
+          <mat-checkbox formControlName="housekeeping">Sanitare</mat-checkbox>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+            <mat-form-field class="example-full-width" style="width: 70%">
+              <mat-label>Pershkrim</mat-label>
+              <textarea matInput placeholder="Pershkrim" formControlName="description"></textarea>
+            </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center start" style="padding-left: 75px">
+          <mat-form-field>
+            <mat-label>Gjinia</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="Femer">Femer </mat-option>
+              <mat-option value="Mashkull">Mashkull </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Mosha</mat-label>
+            <input matInput placeholder="Mosha" formControlName="age">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <mat-slide-toggle style="padding-left: 75px"
+                          class="example-margin"
+                          formControlName="visible"
+                          [(ngModel)]="isChecked"
+        >
+          Profil i dukshem
+        </mat-slide-toggle>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width: 100%;margin-top: 20px;margin-bottom: 10px">
+        <button mat-stroked-button color="accent" type="submit">Krijo</button>
+      </div>
+    </form>
+    <div *ngIf="workerProfile==true && editMode==false" style="width: 100%; position: relative;" fxLayout="row">
+      <div fxLayout="column" fxFlex="50" fxLayoutAlign="start center" fxLayoutGap="30px"
+           style="padding: 10px; margin-top: 20px; font-family: Raleway-Thin; font-weight: 600;">
+        <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start center" style="width: 100%; margin-top: 10px; border-radius: 21px; padding: 0px 25px;
+        ">
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Emri: {{workerProfileData[0].name}}
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Mbiemri: {{workerProfileData[0].surname}}
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Numer telefoni: {{workerProfileData[0].phoneNumber}}
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Qyteti: {{workerProfileData[0].city}}
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Gjinia: {{workerProfileData[0].gender}}
+          </div>
+          <div style="width: 100%;" fxLayoutAlign="start center">
+            Mosha: {{workerProfileData[0].age}}
+          </div>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px" style="border-radius: 21px;
+        padding-bottom: 10px; width: 100%;">
+          <div fxLayout="row" fxLayoutAlign="space-between center"
+               style="padding-left: 25px; width: 100%; padding-top: 5px;">
+            <div>Sherbimet e ofruara:</div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10px" style="padding-left: 25px;">
+            <mat-chip-list aria-label="Kategori" style="padding-top: 10px;">
+              <mat-chip *ngIf="workerProfileData[0].childCare" style="background-color: #268bd2;" selected>Kujdestare
+                femijesh
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="Kategori" style="padding-top: 10px;">
+              <mat-chip *ngIf="workerProfileData[0].seniorCare" color="primary" style="background-color: #f0a30a;"
+                        selected>Kujdestare te moshuarish
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="Kategori" style="padding-top: 10px;">
+              <mat-chip *ngIf="workerProfileData[0].petCare" color="accent" style="background-color: #2aa198;" selected>
+                Kujdestare kafshesh
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list aria-label="Kategori" style="padding-top: 10px;">
+              <mat-chip *ngIf="workerProfileData[0].housekeeping" color="accent" style="background-color: #dc322f;"
+                        selected>Sanitare
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      </div>
+
+      <div fxLayout="column" fxFlex="50" fxLayoutAlign="start center" fxLayoutGap="30px" style="padding: 10px; margin-top: 20px;
+      font-family: Raleway-Thin; font-weight: 600; letter-spacing: 1px;">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="start start" style="width: 100%;">
+          <div style="width: 100%; font-size: 14px;">Pershkrimi:</div>
+          <div style="width: 100%; font-size: 13px;">{{workerProfileData[0].description}}</div>
+        </div>
+      </div>
+      <div onselectstart="return false" style="width: 25vw; border-radius: 50px; text-align: center; background: #ffffffed;
+      color: black; font-family: Raleway-Regular; padding: 20px; font-size: 20px; cursor: pointer; letter-spacing: 1px;
+      position: absolute; top: 400px; left: 11vw; box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+        Fillo kerko pune
+      </div>
+    </div>
+
+    <form *ngIf="editMode" [formGroup]="createProfileForm" (ngSubmit)="createProfile(createProfileForm.value)"
+          style="width: 100%">
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Emer</mat-label>
+            <input matInput placeholder="Emer" formControlName="name">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Mbiemer</mat-label>
+            <input matInput placeholder="Mbiemer" formControlName="surname">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Numer telefoni</mat-label>
+            <input matInput placeholder="Numer telefoni" formControlName="phoneNumber">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Qyteti</mat-label>
+            <input matInput placeholder="Qyteti" formControlName="city">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center start" style="padding-left: 75px">
+          <div style="padding-bottom: 5px">Kategorite e punes:</div>
+          <mat-checkbox formControlName="childCare">Kujdestare femijesh</mat-checkbox>
+          <mat-checkbox formControlName="seniorCare">Kujdestare te moshuarish</mat-checkbox>
+          <mat-checkbox formControlName="petCare">Kujdestare kafshesh</mat-checkbox>
+          <mat-checkbox formControlName="housekeeping">Sanitare</mat-checkbox>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Pershkrim</mat-label>
+            <textarea matInput placeholder="Pershkrim" formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center start" style="padding-left: 75px">
+          <mat-form-field>
+            <mat-label>Gjinia</mat-label>
+            <mat-select formControlName="gender">
+              <mat-option value="Femer">Femer </mat-option>
+              <mat-option value="Mashkull">Mashkull </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Mosha</mat-label>
+            <input matInput placeholder="Mosha" formControlName="age">
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <mat-slide-toggle style="padding-left: 75px"
+                          class="example-margin"
+                          formControlName="visible"
+                          [(ngModel)]="isChecked"
+        >
+          Profil i dukshem
+        </mat-slide-toggle>
+      </div>
+
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width: 100%;margin-top: 20px;margin-bottom: 10px">
+        <button mat-stroked-button color="accent" type="submit">Krijo</button>
+      </div>
+    </form>
+  </div>
+</div>

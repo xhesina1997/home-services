@@ -1,0 +1,53 @@
+<div *ngIf="action === 'logIn'" fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 60px;
+  border-radius: 150px 150px 0 0; background: rgba(255, 255, 255, 0.79); width: 10vw; height: 5vw; z-index: 10">
+    <img src="https://img.icons8.com/officel/80/000000/key-security.png"/>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="space-evenly center" style="width: 20vw; height: 30vh;  background: rgba(255, 255, 255, 0.79); border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+    <form>
+      <div style="font-family: Raleway-Thin; font-weight: 700; letter-spacing: 2px;">
+        <mat-form-field >
+          <mat-label class="text16">Email</mat-label>
+          <input matInput class="text16" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+      <div style="font-family: Raleway-Thin; font-weight: 700; letter-spacing: 2px;">
+        <mat-form-field >
+          <mat-label class="text16">Fjalekalimi</mat-label>
+          <input matInput type="password" class="text16" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+    </form>
+    <div>
+      <button mat-button class="text" (click)="login()">Identifikohu</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="action === 'register'" fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 60px;
+  border-radius: 150px 150px 0 0; background: rgba(255, 255, 255, 0.79); width: 10vw; height: 5vw; z-index: 10;">
+    <img src="https://img.icons8.com/officel/80/000000/add-user-male.png"/>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="space-evenly center" style="width: 20vw; height: 30vh;  background: rgba(255, 255, 255, 0.79); border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+    <form>
+      <div style="font-family: Raleway-Thin; font-weight: 700; letter-spacing: 2px;">
+        <mat-form-field >
+          <mat-label class="text16">Email</mat-label>
+          <input matInput class="text16" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+      <div style="font-family: Raleway-Thin; font-weight: 700; letter-spacing: 2px;">
+        <mat-form-field >
+          <mat-label class="text16">Fjalekalimi</mat-label>
+          <input matInput type="password" class="text16" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+      </div>
+    </form>
+    <div>
+      <button mat-button class="text" (click)="register()">Regjistrohu</button>
+    </div>
+  </div>
+</div>

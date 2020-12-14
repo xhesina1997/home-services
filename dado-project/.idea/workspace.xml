@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5faddd55-4dea-4b10-b545-283129e9db4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/child-care/child-care.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/child-care/child-care.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/housekeeping/housekeeping.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/housekeeping/housekeeping.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/listings/listings.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/listings/listings.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/pet-care/pet-care.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/pet-care/pet-care.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/pages/senior-care/senior-care.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/pages/senior-care/senior-care.component.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1cirN3sewuxW9Xd4CQggYUnWZOg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/fonts" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="E2E Tests (dado-project-e2e)" type="JavaScriptTestRunnerProtractor">
+      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <node-interpreter value="project" />
+      <protractor-options value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5faddd55-4dea-4b10-b545-283129e9db4d" name="Default Changelist" comment="" />
+      <created>1591022211389</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591022211389</updated>
+      <workItem from="1591022217051" duration="83962000" />
+      <workItem from="1592920474454" duration="7473000" />
+      <workItem from="1595334799222" duration="1335000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="668" y="305" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591357773715">
+      <screen x="0" y="24" width="3840" height="985" />
+    </state>
+    <state x="668" y="305" key="#com.intellij.fileTypes.FileTypeChooser/0.24.3840.985@0.24.3840.985" timestamp="1591357773715" />
+    <state width="1874" height="273" key="GridCell.Tab.0.bottom" timestamp="1591022271156">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state width="1874" height="273" key="GridCell.Tab.0.bottom/0.24.1920.985@0.24.1920.985" timestamp="1591022271156" />
+    <state width="1874" height="273" key="GridCell.Tab.0.center" timestamp="1591022271156">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state width="1874" height="273" key="GridCell.Tab.0.center/0.24.1920.985@0.24.1920.985" timestamp="1591022271156" />
+    <state width="1874" height="273" key="GridCell.Tab.0.left" timestamp="1591022271155">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state width="1874" height="273" key="GridCell.Tab.0.left/0.24.1920.985@0.24.1920.985" timestamp="1591022271155" />
+    <state width="1874" height="273" key="GridCell.Tab.0.right" timestamp="1591022271156">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state width="1874" height="273" key="GridCell.Tab.0.right/0.24.1920.985@0.24.1920.985" timestamp="1591022271156" />
+    <state x="0" y="94" width="1920" height="816" key="MergeDialog" timestamp="1591701069079">
+      <screen x="0" y="24" width="3840" height="985" />
+    </state>
+    <state x="0" y="94" width="1920" height="816" key="MergeDialog/0.24.3840.985@0.24.3840.985" timestamp="1591701069079" />
+    <state x="846" y="371" width="527" height="262" key="MultipleFileMergeDialog" timestamp="1591701069085">
+      <screen x="0" y="24" width="3840" height="985" />
+    </state>
+    <state x="846" y="371" width="527" height="262" key="MultipleFileMergeDialog/0.24.3840.985@0.24.3840.985" timestamp="1591701069085" />
+    <state x="326" y="243" width="588" height="518" key="find.popup" timestamp="1592921243311">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state x="651" y="243" width="618" height="518" key="find.popup/0.24.3840.985@0.24.3840.985" timestamp="1591887755736" />
+    <state x="326" y="243" width="588" height="518" key="find.popup/1920.0.1920.1080/0.24.1920.985@0.24.1920.985" timestamp="1592921243311" />
+    <state x="312" y="218" width="672" height="678" key="search.everywhere.popup" timestamp="1592926200233">
+      <screen x="0" y="24" width="1920" height="985" />
+    </state>
+    <state x="623" y="218" width="672" height="678" key="search.everywhere.popup/0.24.3840.985@0.24.3840.985" timestamp="1591885750746" />
+    <state x="312" y="218" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.24.1920.985@0.24.1920.985" timestamp="1592926200233" />
+  </component>
+</project>

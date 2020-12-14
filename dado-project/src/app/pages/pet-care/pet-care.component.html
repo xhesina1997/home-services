@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="row" fxLayoutAlign="center center" style="padding-top: 60px; z-index: 10;
+  border-radius: 150px 150px 0 0; background: rgba(255, 255, 255, 0.79); width: 10vw; height: 5vw;">
+<!--    <img src="https://img.icons8.com/color/100/000000/german-shepherd.png"/>-->
+    <img src="https://img.icons8.com/nolan/96/cat-footprint.png" />
+
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="start center" style="width: 60vw; height: 50vh;  background: rgba(255, 255, 255, 0.79); border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+    <div fxLayout="row" fxLayoutAlign="center center"
+         style="height: 25px; width: 100%; font-family: DancingScript; font-size: 32px; margin-top: 45px;">
+      <div> Fillo kërkimin... Zgjidh një opsion !</div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="135px" fxFlex="90">
+      <div fxFlex="50" fxLayoutAlign="space-between center" fxLayout="column" class="div-card" [routerLink]="['/listings/pet-care']">
+        <div style="font-weight: 700;font-size: 18px; text-align: center;">Kërkoj kujdestar/e për kafshët shtëpiake</div>
+        <div style="font-size: 13px;margin-top:25px; text-align: center;">Gjeni kujdesin e duhur për miqtë tuaj katërputroshë! </div>
+        <div class="div-button">Kerko njerez</div>
+      </div>
+      <div fxFlex="50" fxLayoutAlign="space-between center" fxLayout="column" class="div-card">
+        <div style="font-weight: 700;font-size: 18px; text-align: center;">Gjeni punë si kujdestar/e kafshësh shtëpiake</div>
+        <div style="font-size: 13px;margin-top:25px; text-align: center;">Kërkoni punë si kujdestar/e kafshësh shtëpiake! </div>
+        <div class="div-button" [routerLink]="['/jobs/pet-care']">Kerko pune</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

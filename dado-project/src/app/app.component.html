@@ -1,0 +1,53 @@
+<mat-toolbar style="background: linear-gradient(180deg, rgba(236,227,222,0.8519782913165266) 52%, rgba(236,227,222,0) 100%);
+position: sticky; top: 0px;">
+  <span [routerLink]="['**']">Dado | </span>
+  <div fxLayout="row" style="width: 100%">
+    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px" fxFlex="60">
+      <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+              [routerLink]="['/child-care']">Femijet
+      </button>
+      <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+              [routerLink]="['/senior-care']">Te moshuarit
+      </button>
+      <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+              [routerLink]="['/pet-care']">Kafshet
+      </button>
+      <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+              [routerLink]="['/housekeeping']">Shtepia
+      </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="25px" fxFlex="40">
+      <ng-container *ngIf="!authenticationService.isLoggedIn">
+        <mat-chip-list>
+          <mat-chip style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px;background: black" selected
+                    [routerLink]="['/user', 'logIn']">Log in
+          </mat-chip>
+        </mat-chip-list>
+        <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+                [routerLink]="['/user', 'register']">Join
+        </button>
+      </ng-container>
+      <ng-container *ngIf="authenticationService.isLoggedIn">
+        <button mat-button style="font-family: Raleway-Thin;font-weight: 700;letter-spacing: 2px"
+                [matMenuTriggerFor]="beforeMenu">{{authenticationService.userData.email}}</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item [routerLink]="['/worker-profile']" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon>person</mat-icon>
+            <div>Profili</div>
+          </button>
+          <button mat-menu-item (click)="authenticationService.logOut()" fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon>exit_to_app</mat-icon>
+            <div>Dil</div>
+          </button>
+        </mat-menu>
+      </ng-container>
+    </div>
+
+  </div>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center center" style="width: 100%;height: calc(100vh - 64px);"
+     [@animRoutes]="animationState">
+  <router-outlet (activate)="onActivate($event)">
+  </router-outlet>
+</div>
+

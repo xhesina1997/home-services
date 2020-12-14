@@ -1,0 +1,75 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="column" fxLayoutAlign="start center" style="width: 99vw; height: 91vh;  background: rgb(245, 245, 245); border-radius: 11px;
+  box-shadow: rgb(227, 221, 216) 0px 0px 44px 30px; z-index: 1;">
+    <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%; height: 100%">
+      <div fxFlex="15" fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start center"
+           style="height: 100%; padding: 10px; padding-left: 20px;">
+        <div fxFlex="60" fxFlexFill class="card-class">
+        </div>
+        <div onselectstart="return false" style="width: 60%; height: 38px;" class="white-button-class">
+          Kerko
+        </div>
+        <div onselectstart="return false" fxLayoutAlign="center center" style="width: 60%; height: 38px;margin-top:20px">
+         <button mat-button  [routerLink]="['/job-posting']" >Krijo postim</button>
+        </div>
+      </div>
+      <div fxFlex="85" fxLayout="row wrap" fxLayoutAlign="start start"
+           style="height: 100%; padding: 10px; overflow: overlay;">
+        <div  *ngFor="let post of filteredData" class="card-class" fxLayout="column" fxLayoutGap="5px" fxFlex="32" style="height: 400px;">
+          <div fxLayout="row" fxFlex="35" fxLayoutAlign="start center" fxLayoutGap="10px">
+            <div fxFlex="30" style="padding-top: 5px;">
+              <img src="../../../assets/icons/suport.png" width="110px" height="110px">
+            </div>
+            <div fxFlex="70" style="font-size: 13px;">
+              <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="2px">
+                <div>Emer: {{post?.name}}</div>
+                <div>Mbiemer: {{post?.surname}}</div>
+                <div>Mosha: {{post?.age}}</div>
+                <div>Qyteti: {{post?.city}}</div>
+                <div>Nr. telefoni: {{post?.phoneNumber}}</div>
+              </div>
+            </div>
+          </div>
+          <div #descDiv fxLayout="column" fxFlex="45" fxLayoutAlign="start start" style="width: 100%; overflow: hidden;">
+            <div
+              style="font-size: 13px; text-align: justify; padding: 5px 15px 0px 15px; line-height: 25px; letter-spacing: 1px;">
+              {{post?.description}}
+            </div>
+          </div>
+          <div fxLayout="row" fxFlex="5" fxLayoutAlign="center center" fxLayoutGap="5px"
+               style="width: 100%; font-size: 12px; position:relative;">
+            <div class="fadeout"></div>
+            <div style="cursor: pointer; color: black; z-index: 1;" *ngIf="checkOverflow(descDiv)" >Lexo me shume</div>
+            <mat-icon *ngIf="checkOverflow(descDiv)" >expand_more</mat-icon>
+          </div>
+          <div fxLayout="row" fxFlex="10" fxLayoutAlign="center center" fxLayoutGap="5px"
+               style="width: 100%; font-size: 12px;">
+            <mat-chip-list *ngIf="post?.childCare" aria-label="Kategori">
+              <mat-chip style="background: linear-gradient(168deg, rgba(38,139,210,1) 40%, rgba(194,38,210,1) 100%);" selected>Kujdestare
+                femijesh
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list *ngIf="post?.seniorCare" aria-label="Kategori">
+              <mat-chip color="primary" style="background: linear-gradient(172deg, rgba(253,205,29,1) 52%, rgba(252,69,69,1) 100%);"
+                        selected>Kujdestare te moshuarish
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list *ngIf="post?.petCare" aria-label="Kategori">
+              <mat-chip color="accent" style="background: linear-gradient(168deg, rgba(42,161,152,1) 38%, rgba(38,99,210,1) 100%);" selected>
+                Kujdestare kafshesh
+              </mat-chip>
+            </mat-chip-list>
+            <mat-chip-list *ngIf="post?.housekeeping" aria-label="Kategori">
+              <mat-chip color="accent" style="background: linear-gradient(168deg, rgba(220,50,47,1) 38%, rgba(147,38,210,1) 100%);"
+                        selected>Sanitare
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="start center" style="width: 99vw; height: 91vh;  background: transparent; border-radius: 11px;
+  box-shadow: #0000007a 0px 0px 13px 5px; z-index: 0; position: absolute;">
+  </div>
+</div>

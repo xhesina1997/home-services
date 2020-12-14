@@ -1,0 +1,55 @@
+<div fxLayout="column" fxLayoutAlign="start center">
+  <div fxLayout="column" fxLayoutAlign="start center" style="width: 50vw; height: auto;  background: rgba(255, 255, 255, 0.79); border-radius: 11px;
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 10px 10px -2px;">
+    <div fxLayout="row" fxLayoutAlign="center center"
+         style="height: 25px; width: 100%; font-family: Raleway-Thin; font-size: 25px; margin-top: 15px;letter-spacing: 1px">
+      <div> Krijoni postim</div>
+    </div>
+    <form [formGroup]="createPostForm"
+          (ngSubmit)="createPost(createPostForm.value)"
+          style="width: 100%;padding:10px">
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+              <mat-label>Titulli i postimit</mat-label>
+              <input matInput placeholder="Titulli i postimit" formControlName="title">
+            </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayout="column" fxLayoutAlign="center start" style="padding-left: 75px">
+          <div style="padding-bottom: 5px">Kategorite e punes:</div>
+          <mat-checkbox formControlName="childCare">Kujdestare femijesh</mat-checkbox>
+          <mat-checkbox formControlName="seniorCare">Kujdestare te moshuarish</mat-checkbox>
+          <mat-checkbox formControlName="petCare">kujdestare kafshesh</mat-checkbox>
+          <mat-checkbox formControlName="housekeeping">Sanitare</mat-checkbox>
+        </div>
+      </div>
+      <div fxLayout="row"  style="margin-top: 20px;padding-left:73px">
+          <mat-form-field class="example-full-width" style="width: 37%">
+          <mat-label>Zona ku ndodhesh</mat-label>
+          <mat-select formControlName="city">
+            <mat-option *ngFor="let area of areas" [value]="area">
+              {{area}}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" style="width: 100%;margin-top: 20px">
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Numer kontakti</mat-label>
+            <input matInput placeholder="Numer telefoni" formControlName="phoneNumber">
+          </mat-form-field>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="center center">
+          <mat-form-field class="example-full-width" style="width: 70%">
+            <mat-label>Pershkrim</mat-label>
+            <textarea matInput placeholder="Pershkrim" formControlName="description"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center" style="width: 100%;margin-top: 20px;margin-bottom: 10px">
+        <button mat-stroked-button color="accent" type="submit">Krijo</button>
+      </div>
+    </form>
+  </div>
+</div>
